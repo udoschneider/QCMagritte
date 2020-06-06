@@ -2,4 +2,4 @@
 model
 	self mainPresenter
 		ifNil: [ ^nil ]
-		ifNotNilDo: [ :pres | ^pres model ]
+		ifNotNil: [ :pres | ^pres model ]
