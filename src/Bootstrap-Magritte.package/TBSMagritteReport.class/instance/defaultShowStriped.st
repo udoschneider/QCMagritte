@@ -1,3 +1,0 @@
-accessing-defaults
-defaultShowStriped
-	^ false
