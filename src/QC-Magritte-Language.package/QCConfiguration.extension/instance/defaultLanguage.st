@@ -1,3 +1,5 @@
-*qc-magritte-language-defaults
+*QC-Magritte-Language
 defaultLanguage
-  ^ self propertyAt: #defaultLanguage ifAbsent: [QCMultilanguageString curLanguage]
+	^ self
+		propertyAt: #defaultLanguage
+		ifAbsent: [ QCMultilanguageString curLanguage ]

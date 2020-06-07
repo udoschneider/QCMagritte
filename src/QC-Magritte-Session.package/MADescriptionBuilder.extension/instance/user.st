@@ -1,4 +1,4 @@
-*qc-magritte-session
+*QC-Magritte-Session
 user
-	self session ifNotNil: [ ^self session user ].
-	^nil
+	self session ifNotNil: [ ^ self session user ].
+	^ nil

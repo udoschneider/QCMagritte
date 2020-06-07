@@ -1,4 +1,3 @@
-*qc-magritte-language-defaults
+*QC-Magritte-Language
 defaultLanguage: aLanguage
-
-  self propertyAt: #defaultLanguage put: aLanguage.
+	self propertyAt: #defaultLanguage put: aLanguage

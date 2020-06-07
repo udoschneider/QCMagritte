@@ -1,3 +1,5 @@
-*qc-magritte-renderer
+*QC-Magritte-Renderer
 isGroupCollapsed: aGroup
-	^(self propertyAt: #collapsedGroups ifAbsent: [ self defaultCollapsedGroups ]) includes: aGroup
+	^ (self
+		propertyAt: #collapsedGroups
+		ifAbsentPut: [ self defaultCollapsedGroups ]) includes: aGroup
