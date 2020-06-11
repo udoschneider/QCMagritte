@@ -47,7 +47,8 @@ baseline: spec
 						requires:
 							#('QC-Magritte-Application' 'QC-Magritte-Bootstrap' 'QC-Magritte-Unit') ];
 				package: 'QC-Magritte-Language'
-					with: [ spec requires: #('QC-Magritte-Builder' 'QC-Magritte-Model' 'QC-Magritte-Session') ];
+					with: [ spec
+						requires: #('QC-Magritte-Builder' 'QC-Magritte-Model' 'QC-Magritte-Session') ];
 				package: 'QC-Magritte-Meta'
 					with: [ spec requires: #('QC-Magritte-Component' 'QC-Magritte-Visitor') ];
 				package: 'QC-Magritte-Model'
@@ -112,7 +113,8 @@ baseline: spec
 				package: 'QC-Magritte-Core'
 					with: [ spec requires: 'QC-Magritte-Pharo2' ] ].
 	spec
-		for: #(#'pharo3.x' #'pharo4.x' #'pharo5.x' #'pharo6.x' #'pharo7.x')
+		for:
+			#(#'pharo3.x' #'pharo4.x' #'pharo5.x' #'pharo6.x' #'pharo7.x' #'pharo8.x')
 		do: [ spec
 				package: 'QC-Magritte-Pharo3';
 				package: 'QC-Magritte-Core'
