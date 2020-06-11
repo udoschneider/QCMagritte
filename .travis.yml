@@ -13,5 +13,5 @@ deploy:
   file: QCMagritte.zip
   on:
     repo: udoschneider/QCMagritte
-    all_branches: true
+    branch: master
   skip_cleanup: 'true'
