@@ -1,21 +1,17 @@
 language: smalltalk
 sudo: false
-
 os:
 - linux
-
 smalltalk:
-- Pharo-6.1
-
+- Pharo64-8-0
 script:
 - bash ./build.sh
-
 deploy:
   provider: releases
   api_key:
-    secure: BF5dSlOiAi0yDqHxC/G1UJHBtJ7kchQK//fxhvarf4LWyYrd/5L4C5ZLf09jnCyuiZzbhQ4aS9rKkSAg6fSP5KNel6+4ysxEwktmRGrAs3Rmge+GKsWYTueNHTFDNH4r9P1hJcL6jevTf1t0fwLdNOfmY5Y+FqJeAYunm4N548ToJ5abM5kesRikqgVTJWhshfvKj0gVvKJsYdNUf51FpNVALENmR601IsT/5J01lJtruW1Lqp6H7Kap4s5Xj7my+t3CfelgKUEmtphWcxiXRNPiBiCs1GLX73VM2Iraq9tf/gttoGRz5Khtm4b0QZgnBZbe9IN2idYULGqBvFwyLCq0mugWDXzuhnRAHimuqCgVkDy7dvUNE7oF5SDFfROH+L+WdiC2bf8TZ0E0LX7YDKOy9mQAri2+svFwAl20kk0ghwyjKHVLCzvJ2Q3CmrEAfD3QgN8TqaKdD5Oj4FPMgX0HULgVxMYpO5gPIL0dpcULrE2Jk2kNXwTqt2WgR2B40wNvfdiA+VZqwMKD/6VJH7C39h5MVNKNbyWFsD87+chD/1UjDUPzWypOAAzd6wo5wGpweFlPZikQjoG/IwqRfvp1B4RMxTrB1AZqPiKrzdNVxg4U+sfRbOD3XBctgLk9oODnwL5U6gcoFsEXnRnKiAa20Lfus6wNm7tIGFCWs78=
+    secure: aoNvt+1f5DZ5jBKMP4Xlz6hoMhwF+Ulh2CEpQElzQx3T7o73t2Cdh145D+g8kZxRcOMIBDRY4OR4d/HmFmH3SiwhiIQ8K9Bs3Hgwzrup3VyJadR3nA5rrJJOUp2iIyGX9Oloyxretsu1DBjgkibmlTDH1UjJ8i8yBpEMAkQGABXFQjjoQD7wLbO/b7olPQW0nsU8224KLMPPwUJ/gjFV1CyAZ2G3qHcB8do4yh19C6doKm3YxTLto9ORNd0j6y0zOj+zQTx5Srbwths9g/HgMFUXyD27+1H8VDtfCPKrt6QT/JneaPWPt1She56PvtPlFwTaE7DBTST2G0hz7nvdhzxwHNOnzLSJKE/r+bK88mOLwJ1sauOOCNsCZnJ0/WTdzSF7n7prCiK5ud0ojO/L/heU5to9jvNWxCdIJyVCte5j8cbnfHm4hApsac6p6JDVQ3w186JN29UwlwoyBMa7wHqRbcmofU7Ez0H7B6ao+niwOsV70om0/ocG2JeE5go9j9CWsmwVzaFNdOoV4rdQ2vZKDtc7E28pX5llXKvSCX3D/K1C84iU77PTwjnR0qW5waWiR4nYMln8lYcpffmw320/Xfn2KmZ95MMORw55tr+WpA+eBBvbkND31qfQ3jxTxUVSRSGaJ5soS994s+StMzFyRxn8AFceobOkxb/QYZQ=
   file: QCMagritte.zip
-  skip_cleanup: true
   on:
-    repo: Afibre/QCMagritte
+    repo: udoschneider/QCMagritte
     all_branches: true
+  skip_cleanup: 'true'
