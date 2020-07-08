@@ -14,26 +14,34 @@ things to be configured.
 First of all we need to define that classes that have rights in our
 system. By default you can set rights to the user overview.
 
-QCUser subclass: \#TodoUser
-instanceVariableNames: ''
-classVariableNames: ''
-category: 'Tutorial-Model'
+```smalltalk
+QCUser subclass: #TodoUser
+    instanceVariableNames: ''
+    classVariableNames: ''
+    category: 'Tutorial-Model'
+```
 
 We also customize the user role.
 
-QCModifyableUserRole subclass: \#TodoUserRole
-instanceVariableNames: ''
-classVariableNames: ''
-category: 'Tutorial-Model'
+```smalltalk
+QCModifyableUserRole subclass: #TodoUserRole
+    instanceVariableNames: ''
+    classVariableNames: ''
+    category: 'Tutorial-Model'
+```
 
 Now we can create a customized user overview. We have 2 overrides in the
 class:
 
+```smalltalk
 userClasses
-^{ TodoUser }
+    ^{ TodoUser }
+```
 
+```smalltalk
 userRoles
-^{ TodoUserRole }
+    ^{ TodoUserRole }
+```
 
 As we create our users and roles using QC Magritte, the useroverview has
 a magritte description for both. We specify here the classes that can be
@@ -41,22 +49,24 @@ expected and created by the user. We now add the user overview to the
 model. We add an instance variable for this with accessors and the
 following magritte description:
 
+```smalltalk
 descriptionUserOverview
-\<magritteDescription\>
-^MAToOneRelationDescription new
-label: 'Users';
-accessor: \#userOverview;
-priority: 50;
-classes: { TodoUserOverview };
-beRequired;
-yourself
+    <magritteDescription>
+    ^MAToOneRelationDescription new
+        label: 'Users';
+        accessor: #userOverview;
+        priority: 50;
+        classes: { TodoUserOverview };
+        beRequired;
+        yourself
+```
 
 Go back to your application and see how it looks. Did you remember to
-add the initialization code for the userOverview?
+add the initialization code for the `userOverview`?
 
 Remeber that this is the barre minimum for user management. You probably
 want to have a user name for the users as well. Extend the user with a
-first name and a sur name. Now override the method "username" to display
+first name and a sur name. Now override the method `username` to display
 the first name. This method is determine what name is displayed when you
 are logged in.
 
@@ -67,31 +77,37 @@ role and a user to the system. You will notice that there are still some
 things to be configured.
 
 First of all we need to define that classes that have rights in our
-system. By default all classes marked with "hasUserRights" will appear
+system. By default all classes marked with `hasUserRights` will appear
 in the list. We probably want to narrow this list further. For this we
-override the "allModelClasses"
+override the `allModelClasses`
 
+```smalltalk
 allModelClasses
-^(RPackage organizer packageNamed: 'Tutorial-Model') classes
+    ^(RPackage organizer packageNamed: 'Tutorial-Model') classes
+```
 
 In smalltalk we can inspect all classes in the system. They are
 organized in "packages". In order to create a list of all classes we
-have modelled, we can limit ourself to the pacakge "Tutorial-Model". Go
+have modelled, we can limit ourself to the pacakge **Tutorial-Model**. Go
 back to the site and check what rights we can add to a role now.
 
 As you can see, not all classes are shown. Only the classes with the
-flag "hasUserRights" will show up. We will add the TodoProjects and
-TodoItems to the list, by adding the following method to the class side
+flag `hasUserRights` will show up. We will add the `TodoProject`s and
+`TodoItem`s to the list, by adding the following method to the class side
 of these classes
 
+```smalltalk
 hasUserRights
-^true
+    ^true
+```
 
 Now go back to the site and check again. Now it is time to put security
 in place. Set the following method in your application model:
 
+```smalltalk
 users
-^self userOverview users
+    ^self userOverview users
+```
 
 As you can see, we only link our users to the users in our user
 overview. If we have added an admin user, we will have user management.
@@ -117,27 +133,27 @@ projects.
 
 Now we are going to create a Reader, someone who is allowed to see
 projects but nothing more. Login with your admin user, and create a role
-with the title "Reader". Add the right "R" (read) for the modelclass
-"TodoProject" to this role. Now create a user ("reader") with only the
-role "Reader" and login with the new user. Here you can see that this
+with the title **Reader**. Add the right **R** (*read*) for the modelclass
+`TodoProject` to this role. Now create a user ("reader") with only the
+role **Reader** and login with the new user. Here you can see that this
 user is allowed to see projects, and can change the project in the todo
 items. But he cannot add projects or change projects. Notice that he can
 still add todo items to a project, by assigning a todo item to a certain
 project.
 
-Now we are going to create a Project managemer. He is allowed to create,
+Now we are going to create a Project manager. He is allowed to create,
 change and update projects. Updating only concerns the title. Login as
-admin again, and create a role "manager" with the rights "C" (create),
-"R" (read) and "U" (update) for the modelclass "TodoProject". Also give
-him the right "R" on TodoUser. Do not give him the right "D" (destroy).
+admin again, and create a role **manager** with the rights **C** (*create*),
+**R** (*read*) and **U** (*update*) for the modelclass `TodoProject`. Also give
+him the right **R** on `TodoUser`. Do not give him the right **D** (*destroy*).
 Also create a user with this role and see that he can add projects. He
-will not be able to see users, as this is in the menu "UserOverview" and
+will not be able to see users, as this is in the menu **UserOverview** and
 he does not have rights on this.
 
-We finally want to add a "useradmin", that is allowed to create users,
+We finally want to add a **useradmin**, that is allowed to create users,
 reset passwords and assign roles. Note that for this we have to add 3
-rights. For the useroverview (R), for the users (CRU) and for the roles
-(R). Now try and add a user with both the role useradmin and reader. See
+rights. For the **useroverview** (*R*), for the **users** (*CRU*) and for the **roles**
+(*R*). Now try and add a user with both the role useradmin and reader. See
 that this person can read projects and add users.
 
 ## Team
@@ -147,28 +163,32 @@ using CRUD rights available. Now we are going to make things more
 complex, by creating a team to a project. This team should of course be
 able to see everything on his/her project, but not on other projects.
 
-Note: there is a problem here in the bootstrap template ... work in
-progress
+> Note: there is a problem here in the bootstrap template ... work in
+> progress
 
 First we are going to add a description for the team members in the
 project. Since the team members are actually the normal users, we are
 going to use the following description:
 
+```smalltalk
 descriptionTeamMembers
-\<magritteDescription\>
-^QCToManyOptionRelationDescription new
-label: 'Team';
-accessor: \#teamMembers;
-priority: 350;
-classes: { TodoUser };
-options: \[ self allProjectUsers \];
-yourself
+    <magritteDescription>
+    ^QCToManyOptionRelationDescription new
+        label: 'Team';
+        accessor: #teamMembers;
+        priority: 350;
+        classes: { TodoUser };
+        options: [ self allProjectUsers ];
+        yourself
+```
 
 And since we only want the "normal" users to be part of the project we
 use this as the accessor:
 
+```smalltalk
 allProjectUsers
-^self model users select: \[ :each | each isAdminUser not \]
+    ^self model users select: [ :each | each isAdminUser not ]
+```
 
 Now go back to the browser and check how it works out. Notice that the
 manager can now select users and add them to his team and remove them
