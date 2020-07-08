@@ -12,28 +12,20 @@ is to include a link that gives a "one-click" image with QCMagritte
 installed. The first item should contain a link where you can download
 the "packed" one-click image. Please click on details for further info.
 
-<div>
-
 For now we will summarize the chapter "installation" as follows:
-download a QCMagritte image and make sure you can launch it.  
+download a QCMagritte image and make sure you can launch it.
 
 Also at some points there are references to images. The images are not
-yet included in the tutorial and should be added.  
+yet included in the tutorial and should be added.
 
 Finally, as this is work in progress, you might need to "reset" this
-tutorial to get a new version. I included a button here to do so.  
-
-</div>
+tutorial to get a new version. I included a button here to do so.
 
 ## Unpack
 
 Locate and unzip the file (if the download process did not unzip it for
 you). This will create a folder with a name similar to “QCMagritte.app”
 that you should place in a convenient location (such as the desktop).
-
-<div>
-
-</div>
 
 ## Launch
 
@@ -45,38 +37,32 @@ On Linux, the folder can be opened to find various items, including
 ‘QCMagritte.sh’. Double click on the appropriate icon to launch the
 executable.
 
-<div>
-
-</div>
-
 ## Pharo image
 
 When you launch the executable, you are actually starting a web server
 in Pharo Smalltalk. (Currently, do-it ZnZincServerAdaptor startOn:
 8080).
 
-<div>
+In the world menu, select Tools\>Seaside Control Panel
 
-In the world menu, select Tools\>Seaside Control Panel  
-
-![](/files/QCTutorialLibrary/SeasideMenu.png)
+![](QCTutorialLibrary/SeasideMenu.png)
 
 An empty control panel comes up. In the top pane, right click to add an
-adapter. Select the ZnZincServerAdaptor  
+adapter. Select the ZnZincServerAdaptor
 
-![](/files/QCTutorialLibrary/AddAdapter.png)
+![](QCTutorialLibrary/AddAdapter.png)
 
-Select the port to use. In this tutorial we'll assume port 8080.  
+Select the port to use. In this tutorial we'll assume port 8080.
 
-![](/files/QCTutorialLibrary/SelectPort.png)
+![](QCTutorialLibrary/SelectPort.png)
 
-The adaptor is added, but it is not yet started.  
+The adaptor is added, but it is not yet started.
 
-![](/files/QCTutorialLibrary/StoppedAdaptor.png)
+![](QCTutorialLibrary/StoppedAdaptor.png)
 
-Select the adaptor and start it  
+Select the adaptor and start it
 
-![](/files/QCTutorialLibrary/StartedSeaside.png)
+![](QCTutorialLibrary/StartedSeaside.png)
 
 As we continue through this tutorial, we will refer to this executable
 as “Pharo” to distinguish it from the Seaside code framework that Pharo
@@ -91,9 +77,7 @@ platforms and will not look like windows created by other applications
 on your platform. One of the windows, labeled “QCMagritte 1.x.y”
 contains a comment telling you that a web server is already running and
 you can point your web browser to http://localhost:8080/ to give it a
-try.  
-
-</div>
+try.
 
 ## Test download
 
@@ -101,10 +85,6 @@ Open a web browser on http://localhost:8080/ to confirm that things are
 up and running correctly. You can poke around a bit here, but don’t get
 too distracted at this point. We’ll be exploring QCMagritte in more
 detail in Chapter 2: Hello world
-
-<div>
-
-</div>
 
 ## Save image
 
@@ -116,10 +96,6 @@ make a snapshot of the current object space—creating a new “image”
 This will write out your changes to the default ‘seaside.image’ file
 that will be read when you next launch the QCMagritte One-Click
 Experience.
-
-<div>
-
-</div>
 
 ## Save image as...
 
@@ -134,20 +110,12 @@ action. Then, if things go bad you can quit without saving (see step
 state. Alternatively, you can change the name of the saved image by
 selecting the ‘save as…’ menu item.
 
-<div>
-
-</div>
-
 ## Save as dialog...
 
 This will open a dialog asking for a name for the new image. Name the
 new image ‘backup.image’ and click OK or press \<Enter\>. This gives us
 a ‘clean’ or ‘virgin’ image that can be restored without downloading
 everything again from the web or copying from a CD/DVD.
-
-<div>
-
-</div>
 
 ## Back up
 
@@ -159,10 +127,6 @@ to start over, simply delete ‘Seaside.changes’ and ‘Seaside.image,’ copy
 ‘Seaside.changes’ and ‘Seaside.image’ (note that capitalization might
 be important, depending on your platform).
 
-<div>
-
-</div>
-
 ## Quit
 
 Now we are ready to quit the application. Left click on the background
@@ -171,9 +135,7 @@ to bring up the (now familiar) World menu and select the last item,
 quit without saving (since we already saved two images of the current
 object space).
 
-<div>
-
 To go to the next chapter: close this tutorial item (go back up), and
-press next to open the next chapter.  
+press next to open the next chapter.
 
-</div>
+
